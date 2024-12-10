@@ -15,10 +15,11 @@ void displayFunc(char content[length][length], int aCount, int nCount, int vCoun
 void eraseFunc(char content[length][length],char contentModified[length][length]);
 
 
-int main(){
-
+int main(int argc, char* argv[]){
+	
 	FILE* fp;
-	fp = fopen(FILE1, "r"); 
+	
+	fp = fopen(argv[1], "r"); 
 	if(fp == NULL){
 		printf("Could not open %s. Goodybye!", FILE1);
 	}
@@ -32,6 +33,7 @@ int main(){
 	wordFunc(word, content, a, v, n );
 	
 	eraseFunc(content,contentModified);
+	
 	int adjCounter, nounCounter, verbCounter; 
 	displayFunc(contentModified, adjCounter, nounCounter, verbCounter, a, n, v);
 	
@@ -41,8 +43,6 @@ return 0;
 }
 
 void wordFunc (char word[length], char content[length][length], char a[length][length], char v[length][length], char n[length][length]){
-
-	char adjCounter, nounCounter, verbCounter; 
 
 	for(int i = 0; i < 22; i++){
 	
