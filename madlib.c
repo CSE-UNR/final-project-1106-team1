@@ -15,14 +15,18 @@ void displayFunc(char content[length][length], int aCount, int nCount, int vCoun
 void eraseFunc(char content[length][length],char contentModified[length][length]);
 
 
-int main(){
+int main(int argc, char* argv[]){
 	
 	FILE* fp;
 	
-	fp = fopen(FILE1, "r"); 
+	fp = fopen(argv[1], "r"); 
 	if(fp == NULL){
-		printf("Could not open %s. Goodybye!", FILE1);
+		printf("Could not open %s. Goodybye!", argv[1]);
 	}
+	
+	//Type in ./madlib madlib1.txt for version 1 of program
+	//OR 
+	//Type in ./madlib madlib2.txt for version 2 of program
 	
 	char content[length][length];
 	char contentModified[length][length];
